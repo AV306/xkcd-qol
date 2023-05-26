@@ -9,7 +9,7 @@
         "48": "images/icon/icon_48.png",
         "64": "images/icon/icon_64.png"
     },
-    "content-scripts": [
+    "content_scripts": [
         {
             "js": [ "scripts/content.js" ],
             "matches": [
