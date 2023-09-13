@@ -33,10 +33,7 @@ topNavBar.insertBefore( explainButton, topNavBar.childNodes.item( 7 ) );
 const middleContainer = document.getElementById( "middleContainer" );
 const jumpBox = document.createElement( "ul" );
 jumpBox.className = "comicNav";
-jumpBox.innerHTML = `<li>Jump to index: <input type="number" id="jumpTargetInput" /></li><li><a onclick="jumpToComic();">Jump!</a></li>`;
+// FIXME: Can we make this line neater?
+// TODO: Add a "disabled" theme for the jump button when it's invalid
+jumpBox.innerHTML = `<li>Jump to index: <input type="number" id="jumpTargetInput" onchange="document.getElementById( 'jumpButton' ).href = '/' + document.getElementById( 'jumpTargetInput' ).value;" /></li> <li><a id="jumpButton">Jump!</a></li>`;
 middleContainer.insertBefore( jumpBox, middleContainer.childNodes.item( 4 ) );
-
-function jumpToComic()
-{
-    window.open( `https://xkcd.com/${document.getElementById( "jumpTargetInput" ).value}` );
-}
